@@ -138,6 +138,7 @@ async def chat_completion(request: ChatCompletionRequest):
     config = model_data["config"]
     model_type = MODEL_REMAPPING.get(config["model_type"], config["model_type"])
     stop_words = get_eom_token(request.model)
+    token_length_info = None
 
     if model_type in MODELS["vlm"]:
         processor = model_data["processor"]

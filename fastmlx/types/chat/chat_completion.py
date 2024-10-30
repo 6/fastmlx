@@ -54,7 +54,7 @@ class ChatCompletionResponse(BaseModel):
     object: str = "chat.completion"
     created: int
     model: str
-    usage: Usage
+    usage: Optional[Usage] = None
     choices: List[dict]
     tool_calls: Optional[List[ToolCall]] = None
 
